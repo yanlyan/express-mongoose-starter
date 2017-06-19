@@ -1,0 +1,39 @@
+{
+  "name": "express-mongoose-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "DEBUG=express-api:* ./bin/start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanlyan/express-mongoose-starter.git"
+  },
+  "keywords": [
+    "Express"
+  ],
+  "author": "Lyan Dwi Pangestu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yanlyan/express-mongoose-starter/issues"
+  },
+  "homepage": "https://github.com/yanlyan/express-mongoose-starter#readme",
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.3",
+    "debug": "^2.6.8",
+    "express": "^4.15.3",
+    "express-unless": "^0.3.0",
+    "express-validator": "^3.2.0",
+    "jsonwebtoken": "^7.4.1",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "mongoose": "^4.10.6",
+    "mongoose-paginate": "^5.0.3",
+    "xss": "^0.3.3"
+  }
+}
