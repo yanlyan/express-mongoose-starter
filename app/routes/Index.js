@@ -1,14 +1,10 @@
 module.exports = (express) => {
-  const router = express.Router();
-
-  router.use(require('../middlewares/AccessTokenMiddleware')
-    .unless({
-
-    }));
-
-
+  let router = express.Router();
+  router.get('/', (req, res) => res.json({
+    status: 200
+  }));
   const UserRoute = require('./UserRoute');
-  router.use('users/', UserRoute);
+  router.use('/users', UserRoute);
 
   return router;
 };

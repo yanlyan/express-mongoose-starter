@@ -5,6 +5,7 @@ const expressValidator = require('express-validator');
 
 const inputAccessor = require('./app/middlewares/InputAccessorMiddleware');
 const appRoutes = require('./app/routes/Index');
+const config = require('./app/config/config');
 
 const app = express();
 
@@ -18,7 +19,23 @@ app.use(bodyParser.urlencoded({
 }));
 
 // validation
-app.use(expressValidator);
+app.use(expressValidator({
+  errorFormatter: function (param, msg, value) {
+    var namespace = param.split('.'),
+      root = namespace.shift(),
+      formParam = root;
+
+    while (namespace.length) {
+      formParam += '[' + namespace.shift() + ']';
+    }
+    return {
+      param: formParam,
+      msg: msg,
+      value: value
+    };
+  }
+}));
+
 
 // handle CORS
 var originsWhitelist = [
@@ -34,9 +51,7 @@ var corsOptions = {
 };
 
 app.use(cors(corsOptions));
-
 app.use(inputAccessor);
-
 // handle routes
 app.use(appRoutes(express));
 

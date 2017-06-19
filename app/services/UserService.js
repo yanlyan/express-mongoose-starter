@@ -1,6 +1,7 @@
 const Promise = require('bluebird');
 const _ = require('lodash');
 const bcrypt = require('bcrypt');
+const HttpStatus = require('http-status-code');
 const UserModel = require('./../models/UserModel');
 
 function UserService() {
@@ -47,7 +48,8 @@ function UserService() {
   };
 
   return {
-    getById
+    getById,
+    authenticate
   };
 
 }
