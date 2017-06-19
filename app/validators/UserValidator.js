@@ -1,9 +1,7 @@
 const util = require('util');
 
 function UserValidator() {
-
-
-
+  
   const login = (req, res, next) => {
 
     const loginValidator = {
